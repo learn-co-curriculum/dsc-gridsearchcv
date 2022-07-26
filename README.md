@@ -1,4 +1,3 @@
-
 # GridSearchCV
 
 ## Introduction
@@ -41,10 +40,9 @@ So how do we know which combination of parameters is best? The only way we can r
 
 The `sklearn` library provides an easy way to tune model parameters through an exhaustive search by using its [`GridSearchCV`](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.GridSearchCV.html) class, which can be found inside the `model_selection` module. `GridsearchCV` combines **_K-Fold Cross-Validation_** with a grid search of parameters. In order to do this, we must first create a **_parameter grid_** that tells `sklearn` which parameters to tune, and which values to try for each of those parameters. 
 
-The following code snippet demonstrates how to use `GridSearchCV` to perform a parameter grid search using a sample parameter grid, `param_grid`. Our parameter grid should be a dictionary, where the keys are the parameter names, and the values are the different parameter values we want to use in our grid search for each given key. After creating the dictionary, all you need to do is pass it to `GridSearchCV()` along with the classifier. YOu can also use K-fold cross-validation during this process, by specifying the `cv` parameter. In this case, we choose to use 3-fold cross-validation for each model created inside our grid search. 
+The following code snippet demonstrates how to use `GridSearchCV` to perform a parameter grid search using a sample parameter grid, `param_grid`. Our parameter grid should be a dictionary, where the keys are the parameter names, and the values are the different parameter values we want to use in our grid search for each given key. After creating the dictionary, all you need to do is pass it to `GridSearchCV()` along with the classifier. You can also use K-fold cross-validation during this process, by specifying the `cv` parameter. In this case, we choose to use 3-fold cross-validation for each model created inside our grid search. 
 
 ```python
-
 clf = DecisionTreeClassifier()
 
 param_grid = {
